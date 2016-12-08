@@ -1,0 +1,765 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+	<meta name="description" content="">
+	<meta name="author" content="">
+	<link rel="icon" href="../../favicon.ico">
+
+	<title>Produit</title>
+	<link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+	<!--  fancybox effects script -->
+	<script type="text/javascript" src="fancybox/lib/jquery-1.10.1.min.js"></script>
+
+	<!-- Add mousewheel plugin (this is optional) -->
+	<script type="text/javascript" src="fancybox/lib/jquery.mousewheel-3.0.6.pack.js"></script>
+
+	<!-- Add fancyBox main JS and CSS files -->
+	<script type="text/javascript" src="fancybox/source/jquery.fancybox.js?v=2.1.5"></script>
+	<link rel="stylesheet" type="text/css" href="fancybox/source/jquery.fancybox.css?v=2.1.5" media="screen" />
+
+	<!-- Add Button helper (this is optional) -->
+	<link rel="stylesheet" type="text/css" href="fancybox/source/helpers/jquery.fancybox-buttons.css?v=1.0.5" />
+	<script type="text/javascript" src="fancybox/source/helpers/jquery.fancybox-buttons.js?v=1.0.5"></script>
+
+	<!-- Add Thumbnail helper (this is optional) -->
+	<link rel="stylesheet" type="text/css" href="fancybox/source/helpers/jquery.fancybox-thumbs.css?v=1.0.7" />
+	<script type="text/javascript" src="fancybox/source/helpers/jquery.fancybox-thumbs.js?v=1.0.7"></script>
+
+	<!-- Add Media helper (this is optional) -->
+	<script type="text/javascript" src="fancybox/source/helpers/jquery.fancybox-media.js?v=1.0.6"></script>
+	<script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+	<!-- Bootstrap core CSS -->
+
+
+	<!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
+	<link href="assets/css/ie10-viewport-bug-workaround.css" rel="stylesheet">
+
+	<!-- Custom styles for this template -->
+	<link href="css/sticky-footer-navbar.css" rel="stylesheet">
+
+	<!-- Just for debugging purposes. Don't actually copy these 2 lines! -->
+	<!--[if lt IE 9]><script src="../../assets/js/ie8-responsive-file-warning.js"></script><![endif]-->
+	<script src="js/ie-emulation-modes-warning.js"></script>
+
+	
+
+	<!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
+      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+      <![endif]-->
+      <style type="text/css">
+	  .btn_cliquer_agrandir
+	  {
+	 margin-left:80 px;
+	  }
+      	.produit_titre
+      	{ 
+      		font-family: Arial, Helvetica, sans-serif;
+      		font-weight: bold;
+      	}
+      	.produit_prix
+      	{
+      		font-family:  Arial, Helvetica, sans-serif;
+      		font-weight: bold;
+      	}
+      	.produit_description
+      	{
+
+      		font-family: Times, "Times New Roman", Georgia, serif;
+      	}
+      	.modal-title{
+      		font-family: Times, "Times New Roman", Georgia, serif;
+      	}
+      </style>  
+  </head>
+
+  <body>
+  	<nav class="navbar navbar-default navbar-fixed-top">
+  		<div class="container">
+  			<div class="navbar-header">
+  				<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+  					<span class="sr-only">Toggle navigation</span>
+  					<span class="icon-bar"></span>
+  					<span class="icon-bar"></span>
+  					<span class="icon-bar"></span>
+  				</button>
+
+  			</div>
+  			<div id="navbar" class="collapse navbar-collapse">
+  				<ul class="nav navbar-nav">
+  					<li class="active"><a href="index.html">Acceuil</a></li>
+  					<li><a href="produits_cafi.html">Produits&Tarifs</a></li>
+  					
+
+  				</ul>
+  			</div><!--/.nav-collapse -->
+  		</div>
+  	</nav>
+  	<div class="container">
+	<br>
+	<br>
+	<br>
+  		<header><h1>Produits :</h1></header>
+  		<hr>
+  		<div class="row text-center">
+
+  			<div class="col-md-3 col-sm-6 hero-feature">
+  				<div class="thumbnail">
+  					<img src="img/Auto_E/1.png" alt="">
+  					<div class="caption">
+  						<h3>CAFI-AUTOE</h3>
+  						<p>un logiciel de gestion d'une auto-école (candidat, véhicule, rendez-vous, examens, acomptes) ...</p>
+  						<p>
+  							<a href="#" class="btn btn-primary" id="btn_auto" onclick="recuperer_id_produit(this.id)">More Info</a>
+  						</p>
+  					</div>
+  				</div>
+  			</div>
+
+  			<div class="col-md-3 col-sm-6 hero-feature">
+  				<div class="thumbnail">
+  					<img src="img/combois/1.png" alt="">
+  					<div class="caption">
+  						<h3>CAFI-BOIS</h3>
+  						<p>un logiciel de  gestion commerciale pour les commerçant du bois et dérivée, 
+  							il permet la gestion ...</p>
+  							<p>
+  								<a href="#" class="btn btn-primary" id="btn_combois" onclick="recuperer_id_produit(this.id)">More Info</a>
+  							</p>
+  						</div>
+  					</div>
+  				</div>
+
+  				<div class="col-md-3 col-sm-6 hero-feature">
+  					<div class="thumbnail">
+  						<img src="img/compta/1.png" alt="">
+  						<div class="caption">
+  							<h3>CAFI-COMPTA</h3>
+  							<p>Un logiciel de comptabilité générale multi - dossiers sous windows, avec des états ...</p>
+  							<p>
+  								<a href="#" class="btn btn-primary" id="btn_compta" onclick="recuperer_id_produit(this.id)">More Info</a>
+  							</p>
+  						</div>
+  					</div>
+  				</div>
+
+  				<div class="col-md-3 col-sm-6 hero-feature">
+  					<div class="thumbnail">
+  						<img src="img/decemp/1.png" alt="">
+  						<div class="caption">
+  							<h3>CAFI-DECEMP</h3>
+  							<p>un logiciel qui permet  la saisie ou l'importation des données de la déclaration employeur, et leur mise en forme ...</p>
+  							<p>
+  								<a href="#" class="btn btn-primary"  id="btn_decemp" onclick="recuperer_id_produit(this.id)">More Info</a>
+  							</p>
+  						</div>
+  					</div>
+  				</div>
+
+  			</div>
+
+
+  			<div class="row text-center">
+  				<div class="col-md-3 col-sm-6 hero-feature">
+  					<div class="thumbnail">
+  						<img src="img/doctor/1.png" alt="">
+  						<div class="caption">
+  							<h3>CAFI-DOCTOR </h3>
+  							<p>un logiciel de gestion de Cabinet médical ...</p>
+  							<p>
+  								<a href="#" class="btn btn-primary"  id="btn_doctor" onclick="recuperer_id_produit(this.id)">More Info</a>
+  							</p>
+  						</div>
+  					</div>
+  				</div>
+  				<div class="col-md-3 col-sm-6 hero-feature">
+  					<div class="thumbnail">
+  						<img src="img/G-A/1.png" alt="">
+  						<div class="caption">
+  							<h3>CAFI-GA </h3>
+  							<p>un logiciel de Facturation pour Grossiste Alimentation <br>...</p>
+  							<p>
+  								<a href="#" class="btn btn-primary"  id="btn_ga" onclick="recuperer_id_produit(this.id)">More Info</a>
+  							</p>
+  						</div>
+  					</div>
+  				</div>
+  				<div class="col-md-3 col-sm-6 hero-feature">
+  					<div class="thumbnail">
+  						<img src="img/point/1.png" alt="">
+  						<div class="caption">
+  							<h3>CAFI-POINTAGE </h3>
+  							<p>un logiciel qui permet :<br>
+  								l'importation des données de pointage à partir ...</p>
+  								<p>
+  									<a href="#" class="btn btn-primary"  id="btn_point" onclick="recuperer_id_produit(this.id)">More Info</a>
+  								</p>
+  							</div>
+  						</div>
+  					</div>
+  					<div class="col-md-3 col-sm-6 hero-feature">
+  						<div class="thumbnail">
+  							<img src="img/pointv/1.png" alt="">
+  							<div class="caption">
+  								<h3> CAFI-POINTVENTE  </h3>
+  								<p>Un logiciel de gestion Commerciale pour point de vente composé de deux modules ...</p>
+  								<p>
+  									<a href="#" class="btn btn-primary"  id="btn_pointv" onclick="recuperer_id_produit(this.id)">More Info</a>
+  								</p>
+  							</div>
+  						</div>
+  					</div>
+
+  				</div>
+  				//PART 3
+
+  				<div class="row text-center">
+  					<div class="col-md-3 col-sm-6 hero-feature">
+  						<div class="thumbnail">
+  							<img src="img/privfisc/1.png" alt="">
+  							<div class="caption">
+  								<h3>CAFI-PRIVFISC</h3>
+  								<p>un logiciel pour l'édition de demandes de Privilège fiscal<br><br>...</p>
+  								<p>
+  									<a href="#" class="btn btn-primary"  id="btn_privfisc" onclick="recuperer_id_produit(this.id)">More Info</a>
+  								</p>
+  							</div>
+  						</div>
+  					</div>
+  					<div class="col-md-3 col-sm-6 hero-feature">
+  						<div class="thumbnail">
+  							<img src="img/quotidien/1.png" alt="">
+  							<div class="caption">
+  								<h3>CAFI-QUOTIDIEN </h3>
+  								<p>un logiciel de gestion pour un journal (abonnements, distribution, publicité...</p>
+  								<p>
+  									<a href="#" class="btn btn-primary"  id="btn_quotidien" onclick="recuperer_id_produit(this.id)">More Info</a>
+  								</p>
+  							</div>
+  						</div>
+  					</div>
+  					<div class="col-md-3 col-sm-6 hero-feature">
+  						<div class="thumbnail">
+  							<img src="img/radiologue/1.png" alt="">
+  							<div class="caption">
+  								<h3>CAFI-RADIOLOGUE </h3>
+  								<p>un logiciel de facturation pour cabinet radiologue, qui permet d'éditer les ...</p>
+  								<p>
+  									<a href="#" class="btn btn-primary"  id="btn_radiologue" onclick="recuperer_id_produit(this.id)">More Info</a>
+  								</p>
+  							</div>
+  						</div>
+  					</div>
+  					<div class="col-md-3 col-sm-6 hero-feature">
+  						<div class="thumbnail">
+  							<img src="img/remorque/1.png" alt="">
+  							<div class="caption">
+  								<h3> CAFI-REMORQUAGE  </h3>
+  								<p>un logiciel de suivie des dossiers de société de remorquage.
+  									qui permet ...</p>
+  									<p>
+  										<a href="#" class="btn btn-primary"  id="btn_remorque" onclick="recuperer_id_produit(this.id)">More Info</a>
+  									</p>
+  								</div>
+  							</div>
+  						</div>
+
+  					</div>
+  					<div class="row text-center">
+  						<div class="col-md-3 col-sm-6 hero-feature">
+  							<div class="thumbnail">
+  								<img src="img/thala/1.png" alt="">
+  								<div class="caption">
+  									<h3>CAFI-THALASSO</h3>
+  									<p>un logiciel de Gestion de Centre de Thalasso ...</p>
+  									<p>
+  										<a href="#" class="btn btn-primary"  id="btn_thala" onclick="recuperer_id_produit(this.id)">More Info</a>
+  									</p>
+  								</div>
+  							</div>
+  						</div>
+  						<div class="col-md-3 col-sm-6 hero-feature">
+  							<div class="thumbnail">
+  								<img src="img/transit/1.png" alt="">
+  								<div class="caption">
+  									<h3>CAFI-TRANSITAIRE </h3>
+  									<p>un logiciel de gestion commerciale pour cabinet transitaire ... <br><br></p>
+  									<p>
+  										<a href="#" class="btn btn-primary"  id="btn_transit" onclick="recuperer_id_produit(this.id)">More Info</a>
+  									</p>
+  								</div>
+  							</div>
+  						</div>
+
+
+
+  					</div>
+  				</div>
+
+  				<div class="modal fade" id="imagemodal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+  					<div class="modal-dialog">
+  						<div class="modal-content">
+  							<div class="modal-header">
+  								<button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+  								<h4 class="modal-title" id="myModalLabel">Image preview</h4>
+  							</div>
+  							<div class="modal-body">
+					 	<button type="button" class="btn btn-danger" id="btn_cliquer_agrandir">cliquer sur l'image pour l'agrandir</button>
+  								<a class="fancybox" rel="group" id="imagepreviewhref" href="">	<img src="" id="imagepreview" style="width: 560px; height: 264px;" ></a><div class="produit_titre"> <p id="produit_titre"><h2></h2></p></div>
+  								<div class="produit_prix" id="produit_prix"><p><h2></h3></p></div>
+  								<div class="produit_description">	<p id="produit_description"></p></div>
+  								<br>
+  								<ul class="pager">
+  									<li class="previous"><a href="#" onclick="previous_src(this.id)">Previous</a></li>
+  									<li class="next"><a href="#" onclick="next_src(this.id)">Next</a></li>
+  								</ul>
+  							</div>
+
+  						</div>
+  					</div>
+  				</div>
+  				<footer class="footer">
+  					<div class="row">
+  						<div class="col-sm-4"> <a href="#">Tunis Bloc I 4éme étage 1073 Montplaisir, Tunis</a> </div>
+  						<div class="col-sm-4"> <span class="glyphicon glyphicon-envelope" ></span> <a href="#">cafi@imedbenmiled.com</a> </div>
+  						<div class="col-sm-4"> <span class="glyphicon glyphicon-phone"></span><a href="#"> 98 696 391 / 26 696 391 </a></div>
+
+  					</div>
+  				</footer>
+  				<script>
+  				$(document).ready(function() {
+		$(".fancybox").fancybox();
+	});
+	//CAFI-AUTOE jquery
+	$("#btn_auto").on("click", function() {
+		$('#myModalLabel').text("CAFI-AUTOE"); 
+   $('#imagepreview').attr('src', "img/Auto_E/1.png"); // here asign the image to the modal when the user click the enlarge link
+   $('#produit_description').text("un logiciel de gestion d'une auto-école(candidat, véhicule, rendez-vous, examens, acomptes)");
+   $('#produit_prix').text("Prix: 750 DT HT");
+   $('#produit_titre').text("CAFI-AUTOE");
+   $('#imagemodal').modal('show'); 
+   moreinfo_onclick();
+});
+//CAFI-BOIS jquery
+$("#btn_combois").on("click", function() {
+	$('#myModalLabel').text("CAFI-BOIS"); 
+   $('#imagepreview').attr('src', "img/combois/1.png"); // here asign the image to the modal when the user click the enlarge link
+   $('#produit_description').text("un logiciel de  gestion commerciale pour les commerçant du bois et dérivée,il permet la gestion du stock en nombre de pièce et en volume");
+   $('#produit_prix').text("Prix: 1050 DT HT");
+
+   $('#produit_titre').text("CAFI-BOIS");
+   $('#imagemodal').modal('show'); // imagemodal is the id attribute assigned to the bootstrap modal, then i use the show function
+});
+//CAFI-COMPTA jquery
+$("#btn_compta").on("click", function() {
+	$('#myModalLabel').text("CAFI-COMPTA"); 
+   $('#imagepreview').attr('src', "img/compta/1.png"); // here asign the image to the modal when the user click the enlarge link
+   $('#produit_description').text("Un logiciel de comptabilité générale multi - dossiers sous windows, avec des états  financiers paramètrables");
+   $('#produit_prix').text("Prix: 1200 DT HT");
+   $('#produit_titre').text("CAFI-COMPTA");
+   $('#imagemodal').modal('show'); // imagemodal is the id attribute assigned to the bootstrap modal, then i use the show function
+});
+$("#btn_decemp").on("click", function() {
+	$('#myModalLabel').text("CAFI-DECEMP"); 
+   $('#imagepreview').attr('src', "img/decemp/1.png"); // here asign the image to the modal when the user click the enlarge link
+   $('#produit_description').text("un logiciel qui permet  la saisie ou l'importation des données de la déclaration employeur, et leur mise en forme suivant le cahier de charge de l'année 2006");
+   $('#produit_prix').text("Prix: 900 DT HT");
+   $('#produit_titre').text("CAFI-DECEMP");
+   $('#imagemodal').modal('show'); // imagemodal is the id attribute assigned to the bootstrap modal, then i use the show function
+});
+$("#btn_doctor").on("click", function() {
+	$('#myModalLabel').text("CAFI-DOCTOR"); 
+   $('#imagepreview').attr('src', "img/doctor/1.png"); // here asign the image to the modal when the user click the enlarge link
+   $('#produit_description').text("un logiciel de gestion de Cabinet médical");
+   $('#produit_prix').text("Prix: 750 DT HT");
+   $('#produit_titre').text("CAFI-DOCTOR");
+   $('#imagemodal').modal('show'); // imagemodal is the id attribute assigned to the bootstrap modal, then i use the show function
+});
+$("#btn_ga").on("click", function() {
+	$('#myModalLabel').text("CAFI-GA"); 
+   $('#imagepreview').attr('src', "img/G-A/1.png"); // here asign the image to the modal when the user click the enlarge link
+   $('#produit_description').text("un logiciel de Facturation pour Grossiste Alimentation");
+   $('#produit_titre').text("CAFI-GA");
+   $('#produit_prix').text("Prix: 900 DT HT");
+   $('#imagemodal').modal('show'); // imagemodal is the id attribute assigned to the bootstrap modal, then i use the show function
+});
+$("#btn_point").on("click", function() {
+	$('#myModalLabel').text("CAFI-POINTAGE"); 
+   $('#imagepreview').attr('src', "img/point/1.png"); // here asign the image to the modal when the user click the enlarge link
+   $('#produit_description').text("un logiciel qui permet :");
+   $('#produit_titre').text("CAFI-POINTAGE");
+   $('#produit_prix').text("Prix: 900 DT HT");
+   $('#imagemodal').modal('show'); // imagemodal is the id attribute assigned to the bootstrap modal, then i use the show function
+});
+$("#btn_pointv").on("click", function() {
+	$('#myModalLabel').text("CAFI-POINTVENTE"); 
+   $('#imagepreview').attr('src', "img/pointv/1.png"); // here asign the image to the modal when the user click the enlarge link
+   $('#produit_description').text("Un logiciel de gestion Commerciale pour point de vente composé de deux modules : <br>");
+   $('#produit_titre').text("CAFI-POINTVENTE");
+   $('#produit_prix').text("Prix: 1500 DT HT");
+   $('#imagemodal').modal('show'); // imagemodal is the id attribute assigned to the bootstrap modal, then i use the show function
+});
+$("#btn_privfisc").on("click", function() {
+	$('#myModalLabel').text("CAFI-PRIVFIC"); 
+   $('#imagepreview').attr('src', "img/privfisc/1.png"); // here asign the image to the modal when the user click the enlarge link
+   $('#produit_description').text("un logiciel pour l'édition de demandes de Privilège fiscal");
+   $('#produit_titre').text("CAFI-PRIVFIC");
+   $('#produit_prix').text("Prix: 750 DT HT");
+   $('#imagemodal').modal('show'); // imagemodal is the id attribute assigned to the bootstrap modal, then i use the show function
+});
+$("#btn_quotidien").on("click", function() {
+	$('#myModalLabel').text("CAFI-QUOTIDIEN"); 
+   $('#imagepreview').attr('src', "img/quotidien/1.png"); // here asign the image to the modal when the user click the enlarge link
+   $('#produit_description').text("un logiciel de gestion pour un journal (abonnements, distribution, publicité..., facturation, suivi clients, différents statistiques) ");
+   $('#produit_titre').text("CAFI-QUOTIDIEN");
+   $('#produit_prix').text("Prix: 1500 DT HT");
+   $('#imagemodal').modal('show'); // imagemodal is the id attribute assigned to the bootstrap modal, then i use the show function
+});
+
+
+
+$("#btn_radiologue").on("click", function() {
+	$('#myModalLabel').text("CAFI-RADIOLOGUE"); 
+   $('#imagepreview').attr('src', "img/radiologue/1.png"); // here asign the image to the modal when the user click the enlarge link
+   $('#produit_description').text("un logiciel de facturation pour cabinet radiologue, qui permet d'éditer les factures et le chiffre d'affaire par période.");
+   $('#produit_titre').text("CAFI-RADIOLOGUE");
+   $('#produit_prix').text("Prix: 750 DT HT");
+   $('#imagemodal').modal('show'); // imagemodal is the id attribute assigned to the bootstrap modal, then i use the show function
+});
+$("#btn_remorque").on("click", function() {
+	$('#myModalLabel').text("CAFI-REMORQUAGE"); 
+   $('#imagepreview').attr('src', "img/remorque/1.png"); // here asign the image to the modal when the user click the enlarge link
+   $('#produit_description').text("un logiciel de suivie des dossiers de société de remorquage. qui permet la facturation par dossier, groupé, ou libre. Et d'éditer les différents statistiques.");
+   $('#produit_titre').text("CAFI-REMORQUAGE");
+   $('#produit_prix').text("Prix: 1500 DT HT");
+   $('#imagemodal').modal('show'); // imagemodal is the id attribute assigned to the bootstrap modal, then i use the show function
+});
+$("#btn_shipping").on("click", function() {
+	$('#myModalLabel').text("CAFI-SHIPPING"); 
+   $('#imagepreview').attr('src', "img/shipping/1.png"); // here asign the image to the modal when the user click the enlarge link
+   $('#produit_description').text("un logiciel de Facturation d'agence de Transport Maritime et Aérien");
+   $('#produit_titre').text("CAFI-SHIPPING");
+   $('#produit_prix').text("Prix: 1200 DT HT");
+   $('#imagemodal').modal('show'); // imagemodal is the id attribute assigned to the bootstrap modal, then i use the show function
+});
+
+
+
+$("#btn_thala").on("click", function() {
+	$('#myModalLabel').text("CAFI-THALASSO"); 
+   $('#imagepreview').attr('src', "img/thala/1.png"); // here asign the image to the modal when the user click the enlarge link
+   $('#produit_description').text("un logiciel de Gestion de Centre de Thalasso");
+   $('#produit_titre').text("CAFI-THALASSO");
+   $('#produit_prix').text("Prix: 2000 DT HT");
+   $('#imagemodal').modal('show'); // imagemodal is the id attribute assigned to the bootstrap modal, then i use the show function
+});
+$("#btn_transit").on("click", function() {
+	$('#myModalLabel').text("CAFI-TRANSITAIRE"); 
+   $('#imagepreview').attr('src', "img/transit/1.png"); // here asign the image to the modal when the user click the enlarge link
+   $('#produit_description').text("un logiciel de gestion commerciale pour cabinet transitaire (facturation, suivi clients, statistiques)");
+   $('#produit_titre').text("CAFI-TRANSITAIRE");
+   $('#produit_prix').text("Prix: 1200 DT HT");
+   $('#imagemodal').modal('show'); // imagemodal is the id attribute assigned to the bootstrap modal, then i use the show function
+});
+//below image source arrays
+var img_src_cafi_auto=["img/Auto_E/1.png","img/Auto_E/2.png","img/Auto_E/3.png","img/Auto_E/4.png","img/Auto_E/5.png","img/Auto_E/6.png"];
+var img_src_combois=["img/combois/1.png","img/combois/2.png","img/combois/3.png","img/combois/4.png","img/combois/5.png"];
+var img_src_compta=["img/compta/1.png","img/compta/2.png","img/compta/3.png","img/compta/4.png"];
+var img_src_decemp=["img/decemp/1.png","img/decemp/2.png","img/decemp/3.png","img/decemp/4.png","img/decemp/5.png","img/decemp/6.png"];
+var img_src_doctor=["img/doctor/1.png","img/doctor/2.png","img/doctor/3.png","img/doctor/4.png","img/doctor/5.png"];
+var img_src_ga=["img/G-A/1.png","img/G-A/2.png","img/G-A/3.png"];
+var img_src_paie=["img/paie/1.png","img/paie/2.png","img/paie/3.png","img/paie/4.png","img/paie/5.png","img/paie/6.png","img/paie/7.png","img/paie/8.png","img/paie/9.png"];
+var img_src_point=["img/point/1.png","img/point/2.png"];
+var img_src_pointv=["img/pointv/1.png","img/pointv/2.png","img/pointv/3.png"];
+var img_src_privfisc=["img/privfisc/1.png","img/privfisc/2.png"];
+var img_src_quotidien=["img/quotidien/1.png"];
+var img_src_radiologue=["img/radiologue/1.png","img/radiologue/2.png","img/radiologue/3.png"];
+var img_src_remorque=["img/remorque/1.png","img/remorque/2.png"];
+var img_src_shipping=["img/shipping/1.png","img/shipping/2.png","img/shipping/3.png"];
+var img_src_thala=["img/thala/1.png","img/thala/2.png","img/thala/3.png","img/thala/4.png","img/thala/5.png","img/thala/6.png","img/thala/7.png"];
+var img_src_transit=["img/transit/1.png","img/transit/2.png","img/transit/3.png",,"img/transit/4.png"];
+//index pour next previous buttons in the modal
+var index_img;
+
+function recuperer_id_produit(id_produit)
+{index_img=0;
+	if(getCookie("produit")!="")
+	{
+		delete_cookie("produit");
+	}
+
+	setCookie("produit",id_produit,365);
+}
+
+function next_src(id)
+
+{
+	var produit_picked=getCookie("produit");
+	var array_length;
+	switch (produit_picked)
+	{
+		case "btn_auto" :
+		array_length=img_src_cafi_auto.length;
+		break;
+		case "btn_combois" :
+		array_length=img_src_combois.length;
+		break;
+		case "btn_compta" :
+		array_length=img_src_compta.length;
+		break;
+		case "btn_decemp" :
+		array_length=img_src_decemp.length;
+		break;
+
+ //btn_doctor
+ case "btn_doctor" :
+ array_length=img_src_doctor.length;
+ break;
+ case "btn_ga" :
+ array_length=img_src_ga.length;
+ break;
+ case "btn_point" :
+ array_length=img_src_point.length;
+ break;
+ case "btn_pointv" :
+ array_length=img_src_pointv.length;
+ break;
+ case "btn_privfisc" :
+ array_length=img_src_privfisc.length;
+ break;
+ case "btn_quotidien" :
+ array_length=img_src_quotidien.length;
+ break;
+ case "btn_radiologue" :
+ array_length=img_src_radiologue.length;
+ break;
+ case "btn_remorque" :
+ array_length=img_src_remorque.length;
+ break;
+ case "btn_shipping" :
+ array_length=img_src_shipping.length;
+ break;
+ case "btn_thala" :
+ array_length=img_src_thala.length;
+ break;
+ case "btn_transit" :
+ array_length=img_src_transit.length;
+ break;
+}
+
+
+if(index_img<array_length-1)
+	index_img++;
+else 
+	index_img=0;
+switch (produit_picked)
+{
+	case "btn_auto" :
+	document.getElementById("imagepreview").src=img_src_cafi_auto[index_img];
+	break;
+	case "btn_combois" :
+	document.getElementById("imagepreview").src=img_src_combois[index_img];
+	break;
+	case "btn_compta" :
+	document.getElementById("imagepreview").src=img_src_compta[index_img];
+	break;
+
+ //btn_decemp
+ case "btn_decemp" :
+ document.getElementById("imagepreview").src=img_src_decemp[index_img];
+ break;
+ //btn_doctor
+ 
+ case "btn_doctor" :
+ document.getElementById("imagepreview").src=img_src_doctor[index_img];
+ break;
+ case "btn_ga" :
+ document.getElementById("imagepreview").src=img_src_ga[index_img];
+ break;
+ case "btn_point" :
+ document.getElementById("imagepreview").src=img_src_point[index_img];
+ break;
+ case "btn_pointv" :
+ document.getElementById("imagepreview").src=img_src_pointv[index_img];
+ break;
+ case "btn_privfisc" :
+ document.getElementById("imagepreview").src=img_src_privfisc[index_img];
+ break;
+ case "btn_quotidien" :
+ document.getElementById("imagepreview").src=img_src_quotidien[index_img];
+ break;
+ case "btn_radiologue" :
+ document.getElementById("imagepreview").src=img_src_radiologue[index_img];
+ break;
+ case "btn_remorque" :
+ document.getElementById("imagepreview").src=img_src_remorque[index_img];
+ break;
+ case "btn_shipping" :
+ document.getElementById("imagepreview").src=img_src_shipping[index_img];
+ break;
+ case "btn_thala" :
+ document.getElementById("imagepreview").src=img_src_thala[index_img];
+ break;
+ case "btn_transit" :
+ document.getElementById("imagepreview").src=img_src_transit[index_img];
+ break;
+}
+
+console.log(index_img+"");
+document.getElementById("imagepreviewhref").href=document.getElementById("imagepreview").src
+}
+
+// a function to set the first source for fancybox
+function moreinfo_onclick()
+{document.getElementById("imagepreviewhref").href=document.getElementById("imagepreview").src
+
+}
+function previous_src()
+
+{
+	var produit_picked=getCookie("produit");
+	var array_length;
+	switch (produit_picked)
+	{
+		case "btn_auto" :
+		array_length=img_src_cafi_auto.length;
+		break;
+		case "btn_combois" :
+		array_length=img_src_combois.length;
+		break;
+		case "btn_compta" :
+		array_length=img_src_compta.length;
+		break;
+		case "btn_decemp" :
+		array_length=img_src_decemp.length;
+		break;
+ //btn_doctor
+ case "btn_doctor" :
+ array_length=img_src_doctor.length;
+ break;
+ case "btn_ga" :
+ array_length=img_src_ga.length;
+ break;
+ case "btn_point" :
+ array_length=img_src_point.length;
+ break;
+ case "btn_pointv" :
+ array_length=img_src_pointv.length;
+ break;
+ case "btn_privfisc" :
+ array_length=img_src_privfisc.length;
+ break;
+ case "btn_quotidien" :
+ array_length=img_src_quotidien.length;
+ break;
+ case "btn_radiologue" :
+ array_length=img_src_radiologue.length;
+ break;
+ case "btn_remorque" :
+ array_length=img_src_remorque.length;
+ break;
+ 
+ case "btn_shipping" :
+ array_length=img_src_shipping.length;
+ break;
+ case "btn_thala" :
+ array_length=img_src_thala.length;
+ break;
+ case "btn_transit" :
+ array_length=img_src_transit.length;
+ break;
+
+
+}
+index_img--;
+if(index_img<0)
+	index_img=array_length-1;
+switch (produit_picked)
+{
+	case "btn_auto" :
+	document.getElementById("imagepreview").src=img_src_cafi_auto[index_img];
+	break;
+	case "btn_combois" :
+	document.getElementById("imagepreview").src=img_src_combois[index_img];
+	break;
+	case "btn_compta" :
+	document.getElementById("imagepreview").src=img_src_compta[index_img];
+	break;
+	case "btn_decemp" :
+	document.getElementById("imagepreview").src=img_src_decemp[index_img];
+	break;
+ //btn_doctor
+ 
+ case "btn_doctor" :
+ document.getElementById("imagepreview").src=img_src_doctor[index_img];
+ break;
+ case "btn_ga" :
+ document.getElementById("imagepreview").src=img_src_ga[index_img];
+ break;
+ case "btn_point" :
+ document.getElementById("imagepreview").src=img_src_point[index_img];
+ break;
+ case "btn_pointv" :
+ document.getElementById("imagepreview").src=img_src_pointv[index_img];
+ break;
+ case "btn_privfisc" :
+ document.getElementById("imagepreview").src=img_src_point[index_img];
+ break;
+ case "btn_quotidien" :
+ document.getElementById("imagepreview").src=img_src_pointv[index_img];
+ break;
+ case "btn_radiologue" :
+ document.getElementById("imagepreview").src=img_src_radiologue[index_img];
+ break;
+ case "btn_remorque" :
+ document.getElementById("imagepreview").src=img_src_remorque[index_img];
+ break;
+ case "btn_shipping" :
+ document.getElementById("imagepreview").src=img_src_shipping[index_img];
+ break;
+ case "btn_thala" :
+ document.getElementById("imagepreview").src=img_src_thala[index_img];
+ break;
+ case "btn_transit" :
+ document.getElementById("imagepreview").src=img_src_transit[index_img];
+ break;
+}
+
+console.log(index_img+"");
+document.getElementById("imagepreviewhref").href=document.getElementById("imagepreview").src
+}
+
+function delete_cookie(name)
+{
+	document.cookie = name + '=; expires=Thu, 01 Jan 1970 00:00:01 GMT;';
+}	
+function getCookie(cname) {
+	var name = cname + "=";
+	var ca = document.cookie.split(';');
+	for(var i = 0; i <ca.length; i++) {
+		var c = ca[i];
+		while (c.charAt(0)==' ') {
+			c = c.substring(1);
+		}
+		if (c.indexOf(name) == 0) {
+			return c.substring(name.length,c.length);
+		}
+	}
+	return "";
+} 
+
+function setCookie(cname, cvalue, exdays) {
+	var d = new Date();
+	d.setTime(d.getTime() + (exdays*24*60*60*1000));
+	var expires = "expires="+d.toUTCString();
+	document.cookie = cname + "=" + cvalue + "; " + expires;
+}	
+</script>
+</body>
+</html>
